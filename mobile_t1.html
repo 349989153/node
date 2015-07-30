@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>mobile_t1</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/mobile_t1.css" rel="stylesheet" />
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/virtualMenu.js"></script>
+    <script src="js/npm.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        
+        function virtualMenu(configJSON){
+          var aTags = $("div.firstclassMenu ul li a");
+          for(var items in configJSON){
+            var a = $("div.firstclassMenu ul li a[data-type*="+items +"]");
+            console.log(a.offset().left);
+            var div = $("<div class='secondclassMenu " + items +"'></div>")
+            var ul = $("<ul class='list-unstyled'></ul>");
+            for(var i = 0,arr = configJSON[items];i < arr.length;i++){
+              var content = $("<li><a href='http://"+arr[i].href+"'>"+arr[i].text+"</a></li>");
+              ul.append(content);
+            }
+            div.append(ul);
+            $("div.firstclassMenu").after(div);
+          }
+        }
+        
+        var json = {
+          "back":[
+            {"href":"www.lulutrip.com","text":"路路行"},
+            {"href":"www.tuniu.com","text":"途牛"},
+            {"href":"www.lvmama.com","text":"驴妈妈"}
+          ],
+          "home":[
+            {"href":"www.jd.com","text":"京东网"},
+            {"href":"www.taobao.com","text":"淘宝"},
+            {"href":"www.yhd.com","text":"一号店"}
+          ],
+          "phone":[
+            {"href":"www.hupu.com","text":"虎扑体育"},
+            {"href":"sports.cntv.cn","text":"CCTV5"},
+            {"href":"sports.sohu.com","text":"搜狐体育"}
+          ],
+          "list":[
+            {"href":"www.baidu.com","text":"棋牌娱乐"},
+            {"href":"www.lagou.com","text":"餐饮服务"},
+            {"href":"www.dajie.com","text":"滴滴打车"},
+            {"href":"www.zhihu.com","text":"旅店住宿"},
+            {"href":"www.qq.com","text":"网吧桌球"}
+          ]
+        }
+        virtualMenu(json);
+        
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <img class="bg_img" src="images/14106750010210139792100056.jpg" />
+        <div class="firstclassMenu">
+          <ul class="list-unstyled">
+            <li><a data-type="back" href="http://www.baidu.com" ><i class="icon-reply"></i></a></li>
+            <li><a data-type="back" href="http://www.lagou.com" ><i class="icon-home"></i></a></li>
+            <li><a data-type="back" href="http://www.dajie.com" ><i class="icon-phone"></i></a></li>
+            <li><a data-type="back" href="http://www.zhihu.com" ><i class="icon-list-ul"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

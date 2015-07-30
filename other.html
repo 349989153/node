@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript">
+var toogle = true;
+function move(obj, target){
+    if(toogle){
+        var tar = document.getElementById(target);
+        var str = obj.innerHTML.constructor==String&&obj.innerHTML!='&nbsp;'&&obj.innerHTML?obj.innerHTML:'';
+        var arr = str.split('');
+        var timer;
+        var i = 0;
+        run(i);        
+        toogle = false;
+    }
+    function run(i){
+        if(i==arr.length)return;                
+        obj.innerHTML = str.slice(i+1)+'&nbsp;';    
+        var newNode = document.createElement('span');
+        obj.appendChild(newNode);
+        newNode.style.position = 'absolute';        
+        newNode.style.left = obj.offsetLeft+10+'px';
+        newNode.innerHTML = arr[i];    
+        timer = setInterval(function(){
+            newNode.style.left = parseInt(newNode.style.left)+5+'px';            
+            if(parseInt(newNode.style.left)+37>=tar.offsetLeft){
+                clearInterval(timer);
+                obj.removeChild(newNode);
+                if(i==0)
+                    tar.innerHTML = arr[i];
+                else
+                    tar.innerHTML += arr[i];                
+                i++;
+                run(i);
+            }
+        },10);        
+    }
+}
+</script>
+<style>
+body { margin:0; padding:0}
+div { margin:50px;display:inline-block; width:300px; height:200px; border:solid 1px #000; font-size:20px; line-height:20px; padding:10px; position:relative;top:200px;}
+</style>
+</head>
+  
+<body>
+<div id="left" onClick="move(this,'right')">我只往右边走</div>
+<div id="right">&nbsp;</div>
+</body>
+</html>

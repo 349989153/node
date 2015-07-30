@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>蒂尔康</title>
+  <style type="text/css">
+    *{
+      margin:0;
+      padding:0;
+    }
+    body{
+      width:1333px;
+    }
+    .banner{
+      background:url(images/bg1_01.png) no-repeat center;
+      height:470px;
+      overflow:hidden;}
+    .menu ul{
+      margin:0;
+      padding:0;
+      list-style:none;
+      text-align:center;
+      background:#6c360e;
+      height:65px;
+    }
+    .menu ul li{
+      float:left;
+      margin-right:100px;
+      color:#fff;
+      font-size:18px;
+      position:relative;
+      top:12px;
+      left:210px;
+    }
+    .menu ul li div{
+      width:74px;
+      height:17px;
+      color:#fff;
+      background:#4b260a;
+      font-size:9px;
+      border-radius:1px;
+      line-height:17px;
+      margin-top:5px;
+    }
+    .menu ul li a{
+      text-decoration:none;
+      color:#fff;
+    }
+    .slides {
+      list-style-type:none;
+      position:relative;
+      z-index:1;
+      font-size:0;
+    }
+    .slides li{
+      height:470px;
+      width:1300px;
+      -webkit-transform-origin:right;
+      -webkit-transform:scaleX(1.0309);
+    }
+    .flexslider{
+      position:relative;
+      height:470px;
+      overflow:hidden;
+      
+    }
+    .flex-control-nav{
+      position:absolute;
+      bottom:10px;
+      z-index:2;
+      width:1333px;
+      text-align:center;
+    }
+    .flex-control-nav li{
+      display:inline-block;
+      *display:inline;
+      zoom:1;
+      width:14px;
+      height:14px;
+      margin:0 5px;
+    }
+    .flex-control-nav a{
+      display:inline-block;
+      width:14px;
+      height:14px;
+      line-height:40px;
+      overflow:hidden;
+      background:url(images/dot.png) right 0 no-repeat;
+      cursor:pointer;
+    }
+    .flex-control-nav .flex-active{
+      background-position:0 0;
+    }
+    a,img{
+      border:0;
+    }
+    .mainwrapper{
+      height:1200px;
+      background:#d9ccbd;
+    }
+    .cake_list .cake{
+      width:270px;
+      height:325px;
+      background:#ece6de;
+    }
+    .cake_list ul{
+      margin:0;
+      padding:0;
+      list-style:none;
+      text-align:center;
+    }
+    .cake_list li{
+      float:left;
+      margin:10px 10px 0 0;
+      position:relative;
+      left:105px;
+    }
+    .cake_list ul li h3{
+      font-family:微软雅黑;
+      font-size:18px;
+      font-weight:600;
+      color:#6c360e;
+    }
+    .cake_list ul li p{
+      color:#ac8e76;
+      font-size:14px;
+      font-weight:400;
+    }
+    .cake_list ul li a{
+      display:block;
+      width:105px;
+      height:23px;
+      line-height:23px;
+      border:1px solid #9f7c61;
+      text-decoration:none;
+      font-size:14px;
+      color:#6c360e;
+      position:relative;
+      left:138px;
+      transition:0.3s ease-out;
+      -ms-transition:0.3s ease-out;
+      -o-transition:0.3s ease-out;
+      -moz-transition:0.3s ease-out;
+      -webkit-transition:0.3s ease-out;
+    }
+    .cake_list ul li a:hover{
+      color:#ece6de;
+      background:#6c360e;
+    }
+    .copyright{
+      color:#574a46;
+      font-size:12px;
+      position:absolute;
+      top:1050px;
+      left:466.5px;
+      width:400px;
+      height:180px;
+      margin:0 auto;
+      text-align:center;
+    }
+    .menu ul li .undLine{
+      opacity:0;
+      border:0;
+      width:2px;
+      height:1px;
+      background:#fff;
+      position:absolute;
+      top:20px;
+      transition:0.2s ease-out;
+      -ms-transition:0.2s ease-out;
+      -o-transition:0.2s ease-out;
+      -moz-transition:0.2s ease-out;
+      -webkit-transition:0.2s ease-out;
+    }
+    .menu ul li .undLine-left{
+      left:-50px;
+    }
+    .menu ul li .undLine-right{
+      left:124px;
+    }
+    .menu ul li a:hover .undLine-left{
+      left:0px;
+      width:100%;
+      opacity:1;
+    }
+    .menu ul li a:hover .undLine-right{
+      left:0px;
+      width:100%;
+      opacity:1
+    }
+  </style>
+  <script type="text/javascript">
+  </script>
+</head>
+<body>
+  <div class="mainwrapper">
+    <div class="menu">
+      <ul>
+        <li style="margin-right:50px;"><img src="images/logo_03.png" style="cursor:pointer;"></img></li>
+        <li><a href="#" class="button">网站首页<div class="grey_div">HOME</div><span class="undLine undLine-left"></span><span class="undLine undLine-right"></span></a></li>
+        <li><a href="#">企业简介<div class="grey_div">BRIEFING</div><span class="undLine undLine-left"></span><span class="undLine undLine-right"></span></a></li>
+        <li><a href="#">产品文化<div class="grey_div">CULTURE</div><span class="undLine undLine-left"></span><span class="undLine undLine-right"></span></a></li>
+        <li><a href="#">产品展示<div class="grey_div">PRODUCTS</div><span class="undLine undLine-left"></span><span class="undLine undLine-right"></span></a></li>
+        <li><a href="#">招贤纳士<div class="grey_div">JOB</div><span class="undLine undLine-left"></span><span class="undLine undLine-right"></span></a></li>
+        <li><a href="#">联系我们<div class="grey_div">ABOUT US</div><span class="undLine undLine-left"></span><span class="undLine undLine-right"></span></a></li>
+      </ul>
+    </div>
+    <div class="banner">
+      <div class="flexslider">
+        <ul class="slides">
+          <li style="background:url(images/pic_1_02.png) bottom center no-repeat"></li>
+          <li style="background:url(images/pic_2_03.png) bottom center no-repeat"></li>
+          <li style="background:url(images/pic_3_03.png) bottom center no-repeat"></li>
+        </ul>
+      </div>
+    </div>
+    <div class="cake_list">
+      <ul>
+        <li><div class="cake"><img src="images/cake_1.png"/><h3>猫山王榴莲系列</h3><p>精选上等猫王山榴莲结合独特技术，<br/>将榴莲与蛋糕、奶油完美融合，<br/>口感香甜，营养全天...</p><a href="#">了解更多</a></div></li>
+        <li><div class="cake"><img src="images/cake_2.png"/><h3>西点系列</h3><p>精选上等猫王山榴莲结合独特技术，<br/>将榴莲与蛋糕、奶油完美融合，<br/>口感香甜，营养全天...</p><a href="#">了解更多</a></div></li>
+        <li><div class="cake"><img src="images/cake_3.png"/><h3>面包系列</h3><p>精选上等猫王山榴莲结合独特技术，<br/>将榴莲与蛋糕、奶油完美融合，<br/>口感香甜，营养全天...</p><a href="#">了解更多</a></div></li>
+        <li><div class="cake"><img src="images/cake_4.png"/><h3>蛋糕系列</h3><p>精选上等猫王山榴莲结合独特技术，<br/>将榴莲与蛋糕、奶油完美融合，<br/>口感香甜，营养全天...</p><a href="#">了解更多</a></div></li>
+      </ul>
+    </div>
+    <div class="copyright"><img src="images/weixin.png" /><br/>蒂尔斯食品有限公司 版权所有 | 2014 京ICP备11005124号</div>
+  </div>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $(".flexslider").flexslider({
+        directionNav:false,
+        pauseOnAction:false
+      });
+    });
+  </script>
+</body>
+</html>
