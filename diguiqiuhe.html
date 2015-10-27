@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>递归求和</title>
+	<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded",function(){
+		console.log("计算开始");
+
+		function calcTotalNumUsed(num){
+			//var resultArr = new Array(10);
+			var resultArr = [0,0,0,0,0,0,0,0,0,0];
+			var temArr = [];
+			//resultArr = resultArr.map(function(val,ind,arr){
+			//	return arr[ind] = 0;
+			//});
+			for(var i = 1;i <= num;i++){
+				temArr = (i + '').split('');
+				for(var j = 0;j < temArr.length;j++){
+					var tem = Number(temArr[j]);
+					resultArr[tem]++;
+				}
+			}
+			return resultArr;
+		}
+		
+		var arr1 = [];
+		var timeBegin = new Date().getTime();
+		arr1 = calcTotalNumUsed(123);
+		var timeEnd1 = new Date().getTime() - timeBegin;
+		console.log("计算页码的时间是" + timeEnd1 +"毫秒");
+
+		console.log(arr1);
+	});
+	</script>
+</head>
+<body>
+
+</body>
+</html>
